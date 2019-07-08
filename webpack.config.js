@@ -1,7 +1,14 @@
 const path = require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
+  mode: "development",
+  devtool: "inline-source-map",
+  devServer: {
+    contentBase: "./dist"
+  },
   entry: {
     app: "./src/main.js",
     print: "./src/print.js"
@@ -9,9 +16,14 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "../dist/"
+    publicPath: ""
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "html webpack plugin"
+    })
+  ],
   module: {
     rules: [
       {

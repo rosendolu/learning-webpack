@@ -11,9 +11,10 @@ const Add = (a, b) => {
   };
 };
 
-document.querySelector("#app>.title").textContent = `hello webpack 1+3= ${Add(
-  1,
-  3
-)()} `;
+// document.querySelector("#app>.title").textContent = `hello webpack 1+3= ${Add(
+//   1,
+//   3
+// )()} `;
 console.log(data.title, JSON.stringify(data));
 console.log(print1());
+document.write("awesome webpack-dev-server ");

@@ -9,4 +9,5 @@ export function print2() {
 }
 export function print3() {
   console.log("I get called from print3");
+  console.log(javascript);
 }
