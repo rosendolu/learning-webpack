@@ -1,7 +1,9 @@
 export function printMe() {
   console.log("I get called from print.js");
+  console.log(`print me `);
 }
 export function print1() {
+  console.log("I get called from print1");
   console.log("I get called from print1");
 }
 export function print2() {

@@ -3,7 +3,7 @@ import "@public/css/style.css";
 import "@public/css/index.scss";
 import "normalize.css";
 import data from "./data";
-import { print1 } from "./print";
+import { printMe, print1 } from "./print";
 
 const Add = (a, b) => {
   return () => {
@@ -18,3 +18,10 @@ const Add = (a, b) => {
 console.log(data.title, JSON.stringify(data));
 console.log(print1());
 document.write("awesome webpack-dev-server ");
+
+if (module.hot) {
+  module.hot.accept("./print.js", () => {
+    console.log(`Accepting the updated printjs module`);
+    printMe();
+  });
+}
