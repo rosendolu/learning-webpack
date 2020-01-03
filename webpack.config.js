@@ -1,9 +1,9 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
-
+const isDevMode = process.env.NODE_ENV === 'development';
 module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -24,8 +24,12 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new miniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    }),
     new HtmlWebpackPlugin({
-      title: 'html webpack plugin'
+      title: 'webpack demo'
     }),
     new webpack.HotModuleReplacementPlugin()
   ],
@@ -33,7 +37,10 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          isDevMode ? 'style-loader' : miniCssExtractPlugin.loader,
+          'css-loader'
+        ]
       },
       {
         test: /\.scss$/,
