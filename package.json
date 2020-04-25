@@ -1,19 +1,25 @@
 {
-  "name": "learning-webpack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rosendolu/learning-webpack.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rosendolu/learning-webpack/issues"
-  },
-  "homepage": "https://github.com/rosendolu/learning-webpack#readme"
+	"name": "learning-webpack",
+	"version": "1.0.0",
+	"description": "webpack",
+	"main": "index.js",
+	"scripts": {
+		"build": "export APP_SERVE_MODE='dev' && webpack webpack.config.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rosendolu/learning-webpack.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/rosendolu/learning-webpack/issues"
+	},
+	"homepage": "https://github.com/rosendolu/learning-webpack#readme",
+	"devDependencies": {
+		"html-webpack-plugin": "^4.2.0",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11"
+	}
 }

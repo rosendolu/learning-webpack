@@ -1,33 +1,22 @@
 module.exports = {
-	'env': {
-		'browser': true,
-		'es6': true
+	env: {
+		browser: true,
+		commonjs: true,
+		es6: true,
 	},
-	'extends': 'eslint:recommended',
-	'globals': {
-		'Atomics': 'readonly',
-		'SharedArrayBuffer': 'readonly'
+	extends: 'eslint:recommended',
+	globals: {
+		__dirname: 'readonly',
+		Atomics: 'readonly',
+		SharedArrayBuffer: 'readonly',
 	},
-	'parserOptions': {
-		'ecmaVersion': 2018,
-		'sourceType': 'module'
+	parserOptions: {
+		ecmaVersion: 2018,
 	},
-	'rules': {
-		'indent': [
-			'error',
-			'tab'
-		],
-		'linebreak-style': [
-			'error',
-			'unix'
-		],
-		'quotes': [
-			'error',
-			'single'
-		],
-		'semi': [
-			'error',
-			'always'
-		]
-	}
+	rules: {
+		indent: ['error', 'tab', 2],
+		'linebreak-style': ['error', 'unix'],
+		quotes: ['error', 'single'],
+		semi: ['error', 'always'],
+	},
 };
