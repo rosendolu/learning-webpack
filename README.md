@@ -1,3 +1,1 @@
-# webpack in action
-
-##
+# webpack
