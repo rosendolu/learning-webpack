@@ -10,6 +10,12 @@ mode = mode === 'dev' ? 'development' : 'production';
 
 module.exports = {
 	mode: mode,
+	devtool: 'inline-source-map',
+	devServer: {
+		contentBase: join(__dirname, 'dist'),
+		// publicPath: join(__dirname, 'dist'),
+		hot: true,
+	},
 	entry: {
 		app: './src/index.js',
 		home: './src/home.js',
