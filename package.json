@@ -4,7 +4,8 @@
 	"description": "webpack",
 	"main": "index.js",
 	"scripts": {
-		"build": "export APP_SERVE_MODE='dev' && webpack webpack.config.js",
+		"build:dev": "export APP_SERVE_MODE=dev && webpack",
+		"build:prod": "webpack",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {

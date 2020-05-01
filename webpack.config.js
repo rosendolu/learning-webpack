@@ -7,7 +7,7 @@ let mode = process.env.APP_SERVE_MODE;
 mode = mode === 'dev' ? 'development' : 'production';
 
 module.exports = {
-	entry: 'src/index.js',
+	entry: './src/index.js',
 	output: {
 		path: join(__dirname, 'dist'),
 		filename: 'bundle.js',
