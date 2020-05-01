@@ -1,18 +1,24 @@
 // eslint-disable-next-line no-unused-vars
+
 const { resolve, join } = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 let mode = process.env.APP_SERVE_MODE;
 mode = mode === 'dev' ? 'development' : 'production';
 
 module.exports = {
-	entry: './src/index.js',
+	mode: mode,
+	entry: {
+		app: './src/index.js',
+		home: './src/home.js',
+	},
 	output: {
 		path: join(__dirname, 'dist'),
-		filename: 'bundle.js',
+		filename: '[name].[hash].js',
+		filename: '[name].[hash].js',
 	},
-	mode: mode,
 	module: {
 		rules: [
 			{
@@ -30,5 +36,13 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [new htmlWebpackPlugin({ template: './src/index.html' })],
+	plugins: [
+		new CleanWebpackPlugin(),
+		new HtmlWebpackPlugin({ template: './src/index.html' }),
+		new HtmlWebpackPlugin({
+			// Also generate a test.html
+			filename: 'test.html',
+			title: 'test',
+		}),
+	],
 };
