@@ -1,0 +1,5 @@
+body {
+	background-color: gray;
+	color: white;
+	background: center/cover no-repeat url('../imgs//img1.jpg');
+}

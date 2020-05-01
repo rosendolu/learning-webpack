@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"build:dev": "export APP_SERVE_MODE=dev && webpack",
-		"build:prod": "webpack",
+		"build": "webpack",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -19,7 +19,10 @@
 	},
 	"homepage": "https://github.com/rosendolu/learning-webpack#readme",
 	"devDependencies": {
+		"css-loader": "^3.5.3",
+		"file-loader": "^6.0.0",
 		"html-webpack-plugin": "^4.2.0",
+		"style-loader": "^1.2.1",
 		"webpack": "^4.43.0",
 		"webpack-cli": "^3.3.11"
 	}

@@ -14,7 +14,21 @@ module.exports = {
 	},
 	mode: mode,
 	module: {
-		rules: [{ test: '/.txt$/', use: 'raw-loader' }],
+		rules: [
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/,
+				use: {
+					loader: 'file-loader',
+					options: {
+						outputPath: 'assets',
+					},
+				},
+			},
+		],
 	},
 	plugins: [new htmlWebpackPlugin({ template: './src/index.html' })],
 };
